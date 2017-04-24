@@ -1,0 +1,9 @@
+<h1><%= venue.title %></h1>
+<a href="/venues/<%= venue._id %>/edit">Edit</a>
+<p><%= venue.description %></p>
+<img src="<%= venue.image %>" alt="<%= venue.title %>'s image">
+<p><%= venue.location %></p>
+<form method="post" action="/venues/<%= venue.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
