@@ -27,6 +27,8 @@ router.route('/')
 router.route('/venues')
   .get(venues.index)
   .post(secureRoute, venues.create);
+router.route('/venues/api')
+  .get(venues.api);
 router.route('/venues/new')
   .get(secureRoute, venues.new);
 router.route('/venues/:id')

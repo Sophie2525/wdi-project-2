@@ -1,1 +1,1 @@
-"use strict";console.log("hello world");
+"use strict";function init(){initMap()}function getAPIData(n){$.get(window.location.origin+"/venues/api").done(function(o){o.venues.forEach(function(o){console.log(o);var a=new google.maps.LatLng(o.lat,o.lng);addMarkers(n,a)})})}function initMap(){var n={lat:53.760861,lng:-98.813876};getAPIData(new google.maps.Map(document.getElementById("map"),{zoom:5,center:n}))}function addMarkers(n,o){new google.maps.Marker({position:o,icon:{path:google.maps.SymbolPath.CIRCLE,scale:4},map:n})}$(init);

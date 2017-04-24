@@ -94,6 +94,13 @@ function venuesDelete(req, res) {
     });
 }
 
+function venuesAPI(req, res) {
+  Venue.find({}, (err, venues) => {
+    if (err) return res.status(500).send();
+    return res.status(200).json({ venues: venues });
+  });
+}
+
 module.exports = {
   index: venuesIndex,
   show: venuesShow,
@@ -101,5 +108,6 @@ module.exports = {
   create: venuesCreate,
   edit: venuesEdit,
   update: venuesUpdate,
-  delete: venuesDelete
+  delete: venuesDelete,
+  api: venuesAPI
 };
