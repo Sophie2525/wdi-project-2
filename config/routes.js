@@ -18,6 +18,9 @@ function secureRoute(req, res, next) {
   return next();
 }
 
+// router.get('/', (req, res) => res.render('statics/index'));
+
+
 router.route('/')
   .get(statics.index);
 
