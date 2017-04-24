@@ -2,13 +2,30 @@ const mongoose   = require('mongoose');
 mongoose.Promise = require('bluebird');
 const env        = require('../config/env');
 
+const User       = require('../models/user');
 const Venue      = require('../models/venue');
 
 mongoose.connect(env.db, () => {
   console.log('Connected');
 });
 
+User.collection.drop();
 Venue.collection.drop();
+
+User
+  .create([{
+    username: 'John Doe',
+    email: 'John.doe@johndoe.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  },{
+    username: 'Jane Doe',
+    email: 'Jane.Doe@janedoe.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }])
+  .then((users) => {
+    console.log(`${users.length} users created!`);
 
 Venue
 .create([
