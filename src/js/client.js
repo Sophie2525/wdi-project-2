@@ -1,19 +1,18 @@
-// console.log('hello world');
-
 $(init);
 
-function init() {
+function init () {
   initMap();
+
 }
 
 function getAPIData(map) {
   $.get(`${window.location.origin}/venues/api`)
   .done(data => {
-    // console.log(data);
+    console.log(data);
     data.venues.forEach(venue => {
       console.log(venue);
       const latLng = new google.maps.LatLng(venue.lat, venue.lng);
-      addMarkers(map, latLng);
+      addMarkers(map, latLng, venue);
     });
   });
 }
@@ -27,33 +26,38 @@ function initMap() {
   getAPIData(map);
 }
 
-
-function addMarkers(map, latLng) {
+function addMarkers(map, latLng, venue) {
   const marker = new google.maps.Marker({
     position: latLng,
-    icon: {
-      path: google.maps.SymbolPath.CIRCLE,
-      scale: 4
-    },
-    map: map
+    map: map,
+    animation: google.maps.Animation.DROP
+
+  });
+  addInfoWindowForVenue(venue, marker, map);
+}
+
+function addInfoWindowForVenue(venue, marker, map){
+  google.maps.event.addListener(marker, 'click', function () {
+    var contentString = `
+    <div class="infowindow">
+    <img class="venueImage" src="${ venue.image }">
+    <h3>${ venue.title }</h3>
+    <p>${ venue.location }</p>
+    <p><a href="/venues/${venue._id}">Continue</a></p>
+    </div>
+    `;
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    infowindow.open(map, marker);
+    map.setCenter(marker.getPosition());
   });
 }
 
-
-// create function for venue markers
-
-
-
-// <%= venue.lat %> <%= venue.lang %>
-// const locations =
-
-// const latLng = new google.maps.LatLng(venue.lat, venue.lang);
-//
-// const marker = new google.maps.Marker({
-//   position: latLng,
-//   icon: {
-//     path: google.maps.SymbolPath.CIRCLE,
-//     scale: 4
-//   },
-//   map: map
+// const infoWindow = new google.maps.InfoWindow({
+//   content: 'hi'
 // });
+
+//   google.maps.event.addListener(marker, 'click', function () {
+//     infoWindow.open(map, marker);
+//   });

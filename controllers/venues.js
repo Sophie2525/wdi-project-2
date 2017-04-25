@@ -1,20 +1,20 @@
 const Venue = require('../models/venue');
+// const Comment = require('../models/comment');
 
-function venuesIndex(req, res) {
+function venuesIndex(req, res, next) {
   Venue
     .find()
     .exec()
     .then(venues => {
       return res.render('venues/index', { venues });
     })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
+    .catch(next);
 }
 
-function venuesShow(req, res) {
+function venuesShow(req, res, next) {
   Venue
     .findById(req.params.id)
+    // .populate('comments.user')
     .exec()
     .then(venue => {
       if (!venue) {
@@ -22,28 +22,24 @@ function venuesShow(req, res) {
       }
       return res.render('venues/show', { venue });
     })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
+    .catch(next);
 }
 
 function venuesNew(req, res) {
   return res.render('venues/new');
 }
 
-function venuesCreate(req, res) {
+function venuesCreate(req, res, next) {
   Venue
     .create(req.body)
     .then(venue => {
       if (!venue) return res.render('error', { error: 'No media was created!' });
       return res.redirect('/venues');
     })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
+    .catch(next);
 }
 
-function venuesEdit(req, res) {
+function venuesEdit(req, res, next) {
   Venue
     .findById(req.params.id)
     .exec()
@@ -53,12 +49,10 @@ function venuesEdit(req, res) {
       }
       return res.render('venues/edit', { venue });
     })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
+    .catch(next);
 }
 
-function venuesUpdate(req, res) {
+function venuesUpdate(req, res, next) {
   Venue
     .findById(req.params.id)
     .exec()
@@ -77,21 +71,17 @@ function venuesUpdate(req, res) {
       }
       return res.render('venues/show', { venue });
     })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
+    .catch(next);
 }
 
-function venuesDelete(req, res) {
+function venuesDelete(req, res, next) {
   Venue
     .findByIdAndRemove(req.params.id)
     .exec()
     .then(() => {
       return res.redirect('/venues');
     })
-    .catch(err => {
-      return res.render('error', { error: err });
-    });
+    .catch(next);
 }
 
 function venuesAPI(req, res) {

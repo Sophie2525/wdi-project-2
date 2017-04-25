@@ -5,6 +5,7 @@ const venues  = require('../controllers/venues');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
+// const comments = require('../controllers/comments');
 
 
 function secureRoute(req, res, next) {
@@ -37,6 +38,9 @@ router.route('/venues/:id')
   .delete(secureRoute, venues.delete);
 router.route('/venues/:id/edit')
   .get(secureRoute, venues.edit);
+
+// router.route('/venues/:id/comments')
+//   .post(comments.create);
 
 router.route('/register')
   .get(registrations.new)
