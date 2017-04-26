@@ -1,5 +1,4 @@
 const Venue = require('../models/venue');
-// const Comment = require('../models/comment');
 
 function venuesIndex(req, res, next) {
   Venue
@@ -14,7 +13,7 @@ function venuesIndex(req, res, next) {
 function venuesShow(req, res, next) {
   Venue
     .findById(req.params.id)
-    // .populate('comments.user')
+    .populate('comments.user')
     .exec()
     .then(venue => {
       if (!venue) {

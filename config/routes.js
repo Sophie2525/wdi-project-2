@@ -5,7 +5,7 @@ const venues  = require('../controllers/venues');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
-// const comments = require('../controllers/comments');
+const comments = require('../controllers/comments');
 
 
 function secureRoute(req, res, next) {
@@ -18,9 +18,6 @@ function secureRoute(req, res, next) {
 
   return next();
 }
-
-// router.get('/', (req, res) => res.render('statics/index'));
-
 
 router.route('/')
   .get(statics.index);
@@ -39,8 +36,8 @@ router.route('/venues/:id')
 router.route('/venues/:id/edit')
   .get(secureRoute, venues.edit);
 
-// router.route('/venues/:id/comments')
-//   .post(comments.create);
+router.route('/venues/:id')
+  .post(comments.create);
 
 router.route('/register')
   .get(registrations.new)

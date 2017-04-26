@@ -2,5 +2,6 @@
 <ul>
   <% venues.forEach(venue => { %>
     <div id="map"></div>
+    <li><a href="/venues/<%= venue._id %>"><%= venue.title %></a></li>
   <% }); %>
 </ul>

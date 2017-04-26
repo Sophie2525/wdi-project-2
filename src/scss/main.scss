@@ -1,8 +1,14 @@
 body {
-  font-family: sans-serif;
-  background: green;
+  background: #eceaed;
 }
 
 #map {
-  height: 800px;
+  height: 700px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.navbar {
+  background: #713c8c;
+  height: 70px;
 }

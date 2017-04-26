@@ -1,8 +1,8 @@
 $(init);
+var infowindow;
 
 function init () {
   initMap();
-
 }
 
 function getAPIData(map) {
@@ -20,7 +20,7 @@ function getAPIData(map) {
 function initMap() {
   const manitoba = {lat: 53.760861, lng: -98.813876};
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 5,
+    zoom: 4,
     center: manitoba
   });
   getAPIData(map);
@@ -30,7 +30,7 @@ function addMarkers(map, latLng, venue) {
   const marker = new google.maps.Marker({
     position: latLng,
     map: map,
-    animation: google.maps.Animation.DROP
+    animation: google.maps.Animation.BOUNCE
 
   });
   addInfoWindowForVenue(venue, marker, map);
@@ -38,6 +38,9 @@ function addMarkers(map, latLng, venue) {
 
 function addInfoWindowForVenue(venue, marker, map){
   google.maps.event.addListener(marker, 'click', function () {
+    if(typeof infowindow !== 'undefined'){
+      infowindow.close();
+    }
     var contentString = `
     <div class="infowindow">
     <img class="venueImage" src="${ venue.image }">
@@ -46,13 +49,17 @@ function addInfoWindowForVenue(venue, marker, map){
     <p><a href="/venues/${venue._id}">Continue</a></p>
     </div>
     `;
-    var infowindow = new google.maps.InfoWindow({
+    infowindow = new google.maps.InfoWindow({
       content: contentString
     });
     infowindow.open(map, marker);
     map.setCenter(marker.getPosition());
   });
 }
+
+
+
+
 
 // const infoWindow = new google.maps.InfoWindow({
 //   content: 'hi'

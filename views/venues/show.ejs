@@ -9,3 +9,17 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
 </form>
+
+<form action="/venues/<%= venue.id %>" method="POST">
+<div>
+  <label for="body">Please leave a comment</label>
+  <textarea name="body" id="body" rows="8" cols="80"></textarea>
+</div>
+  <input type="submit" class="btn">
+</form>
+
+<ul>
+  <% venue.comments.forEach(comment => { %>
+    <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
+<% }) %>
+</ul>
