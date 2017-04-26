@@ -1,7 +1,7 @@
-<h1>Media</h1>
 <ul>
   <% venues.forEach(venue => { %>
     <div id="map"></div>
+    <li><%= venue.title %></li>
     <li><a href="/venues/<%= venue._id %>"><%= venue.title %></a></li>
   <% }); %>
 </ul>

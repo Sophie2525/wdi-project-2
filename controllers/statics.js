@@ -1,10 +1,7 @@
 const User = require('../models/user');
 
 function staticsIndex(req, res) {
-  User
-    .find()
-    .exec()
-    .then((users) => res.render('statics/home', { users }));
+  return res.render('statics/home', { path: '/' })
 }
 
 module.exports = {

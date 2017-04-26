@@ -14,7 +14,7 @@
   type="text/javascript"></script>
   <script src="/js/client.js" charset="utf-8"></script>
 </head>
-<body>
+<body <% if (locals.path === '/') { %>class="bg"<% } %>>
 
   <header>
     <%- include ./partials/_navbar %>
@@ -27,6 +27,6 @@
       <%- body %>
     </main>
 
-    <footer></footer>
+    <footer><div class="footer navbar-fixed-bottom"></div> </footer>
   </body>
   </html>
