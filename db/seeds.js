@@ -34,7 +34,7 @@ User
     {
       title: 'World Cup Opener',
       description: 'England fans before England took on France',
-      image: 'http://i.imgur.com/EFZU2Y7.jpg',
+      image: 'https://i.imgur.com/EFZU2Y7.jpg',
       location: 'Stade de Moncton',
       lat: '46.095978',
       lng: '-64.760720'
