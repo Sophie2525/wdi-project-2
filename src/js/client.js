@@ -120,7 +120,7 @@ function initMap() {
 
 function addMarkers(map, latLng, venue) {
   var icon = {
-    url: 'images/canadafootball.png',
+    url: 'http://i.imgur.com/QIH1qIG.png',
     scaledSize: new google.maps.Size(42, 30),
     origin: new google.maps.Point(0,0),
     anchor: new google.maps.Point(0, 0)
