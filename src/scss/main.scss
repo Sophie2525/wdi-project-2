@@ -48,6 +48,7 @@ body {
   font-family: 'Bubblegum Sans', cursive;
   font-size: 20px;
   margin-top: 10px;
+  display: inline-block;
 }
 
 // Map Page
@@ -210,6 +211,30 @@ body {
     text-align: center;
     margin: 0 auto;
     margin-top: 8pc;
+    border: 3px #713c8c solid;
+  }
+
+  #new {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 9pc;
+    border: 3px #713c8c solid;
+  }
+
+  #login {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 18pc;
+    border: 3px #713c8c solid;
+  }
+
+  #register {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 14pc;
     border: 3px #713c8c solid;
   }
 

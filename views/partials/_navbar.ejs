@@ -8,23 +8,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">GOTBOnTour</a>
-    </div>
+    <a class="navbar-brand" href="/">GOTBOnTour</a>
+  </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-link"><a href="/venues">Media Map</a></li>
-        <li class="nav-link"><a href="/venues/new">Add Media</a></li>
-        <% if (locals.isLoggedIn) { %>
-          <li class="nav-link"><a href="/logout">Logout</a></li>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-link"><a href="/venues">Media Map</a></li>
+      <li class="nav-link"><a href="/venues/new">Add Media</a></li>
+      <% if (locals.isLoggedIn) { %>
+        <li class="nav-link"><a href="/logout">Logout</a></li>
         <% } else { %>
           <li class="nav-link"><a href="/login">Log In</a></li>
           <li class="nav-link"><a href="/register">Register</a></li>
-        <% } %>
-          </ul>
-        </li>
-      </ul>
-    </div>
+          <% } %>
+        </ul>
+      </li>
+    </ul>
   </div>
+</div>
 </nav>
