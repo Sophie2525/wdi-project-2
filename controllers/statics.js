@@ -1,7 +1,5 @@
-const User = require('../models/user');
-
 function staticsIndex(req, res) {
-  return res.render('statics/home', { path: '/' })
+  return res.render('statics/home', { path: '/' });
 }
 
 module.exports = {

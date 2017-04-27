@@ -46,7 +46,7 @@ User
       lat: '47.835957',
       lng: '-69.535985'
     }, {
-      title: 'England v Colombia, Montreal',
+      title: 'England v Colombia',
       description: 'England fans in full song against Colombia',
       image: 'http://i.imgur.com/D1b34Lj.jpg',
       location: 'Bell Centre, Montreal',
@@ -91,16 +91,3 @@ User
       });
     });
   });
-
-
-
-
-  // .then(venues => {
-  //   console.log(`${venues.length} were created`);
-  // })
-  // .catch(err => {
-  //   console.log(`Error: ${err}`);
-  // })
-  // .finally(() => {
-  //   mongoose.connection.close();
-  // });

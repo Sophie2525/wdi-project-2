@@ -1,7 +1,30 @@
-<ul>
-  <% venues.forEach(venue => { %>
-    <div id="map"></div>
-    <li><%= venue.title %></li>
-    <li><a href="/venues/<%= venue._id %>"><%= venue.title %></a></li>
-  <% }); %>
-</ul>
+<body>
+  <div id="map"></div>
+
+  <div class="container">
+    <div class="col-md-6">
+
+      <div class="well">
+        <div id="slideCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% venues.forEach((venue, i) => { %>
+              <div class="item <% if (i === 0) { %>active<% } %>">
+                <a href="/venues/<%= venue._id %>"><img class="center" src="<%= venue.image %>" alt="<%= venue.title %>'s image"></a>
+                <p><%= venue.location %></p>
+              </div>
+            <% }); %>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#slideCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#slideCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </body>

@@ -18,10 +18,10 @@ function getAPIData(map) {
 }
 
 function initMap() {
-  const winnipeg = {lat: 51.014597, lng: -93.828916};
+  const winnipeg = {lat: 49.895136, lng: -97.138374};
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 5,
-    center: winnipeg
+    zoom: 4,
+    center: winnipeg,
     styles: [
     {
         "featureType": "administrative",
@@ -106,7 +106,7 @@ function initMap() {
         "elementType": "all",
         "stylers": [
             {
-                "color": "#4b2877"
+                "color": "#713c8c"
             },
             {
                 "visibility": "on"
@@ -120,7 +120,7 @@ function initMap() {
 
 function addMarkers(map, latLng, venue) {
   var icon = {
-    url: 'images/canadaflag.png',
+    url: 'images/canadafootball.png',
     scaledSize: new google.maps.Size(42, 30),
     origin: new google.maps.Point(0,0),
     anchor: new google.maps.Point(0, 0)
@@ -129,7 +129,7 @@ function addMarkers(map, latLng, venue) {
   const marker = new google.maps.Marker({
     position: latLng,
     map: map,
-    animation: google.maps.Animation.DROP,
+    animation: google.maps.Animation.BOUNCE,
     icon
   });
   addInfoWindowForVenue(venue, marker, map);
@@ -142,8 +142,7 @@ function addInfoWindowForVenue(venue, marker, map){
     }
     var contentString = `
     <div class="infowindow">
-    <img class="venueImage" src="${ venue.image }">
-    <h3>${ venue.title }</h3>
+    <h4>${ venue.title }<h4>
     <p>${ venue.location }</p>
     <p><a href="/venues/${venue._id}">Continue</a></p>
     </div>
@@ -155,15 +154,3 @@ function addInfoWindowForVenue(venue, marker, map){
     map.setCenter(marker.getPosition());
   });
 }
-
-
-
-
-
-// const infoWindow = new google.maps.InfoWindow({
-//   content: 'hi'
-// });
-
-//   google.maps.event.addListener(marker, 'click', function () {
-//     infoWindow.open(map, marker);
-//   });

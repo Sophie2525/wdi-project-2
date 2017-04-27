@@ -1,25 +1,42 @@
+<main class = "show">
+
 <h1><%= venue.title %></h1>
-<a href="/venues/<%= venue._id %>/edit">Edit</a>
-<p><%= venue.description %></p>
 
-<img src="<%= venue.image %>" alt="<%= venue.title %>'s image">
+<div class="travelImage">
+  <img src="<%= venue.image %>" alt="<%= venue.title %>'s image">
+</div>
 
-<p><%= venue.location %></p>
+<div class="info">
+  <p><%= venue.description %><br />
+  <%= venue.location %></p>
+
+<div class="button1">
+<button type="submit" class="button"><a href="/venues/<%= venue._id %>/edit">EDIT</a></button>
+</div>
+
+<div class="button2">
 <form method="post" action="/venues/<%= venue.id %>">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete">
+  <button type="submit" class="button">DELETE</button>
 </form>
+</div>
+</div>
 
+<div class="comment">
 <form action="/venues/<%= venue.id %>" method="POST">
 <div>
   <label for="body">Please leave a comment</label>
-  <textarea name="body" id="body" rows="8" cols="80"></textarea>
+  <textarea name="body" id="body" rows="4" cols="80"></textarea>
 </div>
-  <input type="submit" class="btn">
+  <button type="submit">SUBMIT</button>
 </form>
+</div>
 
-<ul>
+<ul style="list-style-type:none">
   <% venue.comments.forEach(comment => { %>
     <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
 <% }) %>
 </ul>
+</div>
+
+</main>

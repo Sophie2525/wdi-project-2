@@ -1,25 +1,58 @@
-<h1>Update Media</h1>
+<div class="formContainer">
+  <h1>Update Media</h1>
 
 <form method="post" action="/venues/<%= venue._id %>">
   <input type="hidden" name="_method" value="put">
 
+  <div class="form-group">
   <label for="title">Title</label>
-  <input type="text" id="title" name="title" value="<%= venue.title %>">
+  <input type="text" id="title" name="title" value="<%= venue.title %>" class="input">
+</div>
 
+<div class="form-group">
   <label for="description">Description</label>
-  <textarea id="description" name="description"><%= venue.description %></textarea>
+  <textarea id="description" name="description" class="input" rows="4"><%= venue.description %></textarea>
+</div>
 
+<div class="form-group">
   <label for="image">Image Link</label>
-  <input type="text" id="image" name="image" value="<%= venue.image %>">
+  <input type="text" id="image" name="image" value="<%= venue.image %>" class="input">
+</div>
 
+<div class="form-group">
   <label for="location">Location</label>
-  <input type="text" id="location" name="location" value="<%= venue.location %>">
+  <input type="text" id="location" name="location" value="<%= venue.location %>" class="input">
+</div>
 
+<div class="form-group">
   <label for="latitude">Latitude</label>
-  <input type="text" id="latitude" name="latitude" value="<%= venue.lat %>">
+  <input type="text" id="latitude" name="latitude" value="<%= venue.lat %>" class="input">
+</div>
 
+<div class="form-group">
   <label for="longitude">Longitude</label>
-  <input type="text" id="longitude" name="longitude" value="<%= venue.lng %>">
+  <input type="text" id="longitude" name="longitude" value="<%= venue.lng %>" class="input">
+</div>
 
-  <input type="submit" value="Submit">
+  <button type="submit" class="button">Submit</button>
 </form>
+</div>
+
+
+<%# <div class="container">
+  <h2>Vertical (basic) form</h2>
+  <form>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>%>

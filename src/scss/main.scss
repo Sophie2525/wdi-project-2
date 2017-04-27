@@ -1,9 +1,9 @@
 body {
   font-family: 'Bubblegum Sans', cursive;
-  background-color: #FCFCFC;
-
+  background-color: #f6f5f4;
 }
 
+// Home Page
 .bg {
   background-image: url(http://i.imgur.com/GJyyXDe.jpg);
   background-size: cover;
@@ -19,16 +19,16 @@ body {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-h1 {
-  font-size: 70px;
-  text-shadow: 6px 6px #713c8c;
-}
+  h1{
+    font-size: 100px;
+    text-shadow: 6px 6px #713c8c;
+  }
 
-h3 {
-  font-size: 40px;
-  text-shadow: 3px 4px #713c8c;
+  h3 {
+    font-size: 50px;
+    text-shadow: 3px 4px #713c8c;
+  }
 }
 
 .navbar-default {
@@ -44,22 +44,205 @@ h3 {
 }
 
 .nav.navbar-nav.navbar-right  li a {
-    color: #fff;
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 20px;
-    margin-top: 10px;
+  color: #fff;
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-.openingvideo {
-  position: absolute;
-   margin: auto;
-   top: 40%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-}
-
+// Map Page
 #map {
   height: 500px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+  margin-top: 50px;
 }
+
+.infowindow{
+  width: 200px;
+  max-height: 200px;
+
+  text-align: center;
+  font-family: 'Bubblegum Sans', cursive;
+
+  a {
+    color: #713c8c;
+  }
+}
+
+// carousel on map page
+.container{
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-left: 32%;
+  position: relative;
+
+  .well{
+    margin: 0 auto;
+    border: 3px #713c8c solid;
+  }
+
+  .center {
+    max-width: 200px;
+    max-height: 200px;
+
+    margin: 0 auto;
+  }
+
+  p{
+    text-align: center;
+    padding: 2px;
+  }
+}
+
+// Media Show Page
+.show{
+  margin-top: 60px;
+
+  text-align: center;
+  color: #000;
+
+  h1{
+    font-size: 70px;
+
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .travelImage{
+    max-width: 650px;
+    position: relative;
+    display: inline-block;
+
+    margin-top: 20px;
+
+    img{
+      max-width: 600px;
+      max-height: 400px;
+      padding: 10px;
+    }
+  }
+
+  .info{
+    margin-left: 60px;
+    display: inline-block;
+
+    p {
+      text-align: center;
+    }
+
+    .button1 {
+      display: inline-block;
+      padding: 5px;
+      margin: 0 auto;
+    }
+
+    .button2{
+      display: inline-block;
+      padding: 5px;
+      margin: 0 auto;
+    }
+
+    .button {
+      width: 90px;
+      height: 40px;
+
+      background-color: #713c8c;
+
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+
+      border-radius: 6px;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+  .comment{
+    max-width: 700px;
+    border-radius: 3px;
+    border: 3px #713c8c solid;
+
+    margin: 0 auto;
+    margin-top: 50px;
+
+    position: relative;
+
+    label{
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    button {
+      width: 90px;
+      height: 40px;
+      margin-bottom: 10px;
+
+      background-color: #713c8c;
+
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+
+      border-radius: 6px;
+    }
+
+  }
+
+  ul {
+    margin-top: 20px;
+    font-size: 20px;
+
+    a{
+      color: #713c8c;
+    }
+  }
+
+// form page
+  .formContainer{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 8pc;
+    border: 3px #713c8c solid;
+  }
+
+  .form-group{
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+
+    label{
+    display: block;
+    font-size: 20px;
+  }
+
+  .input{
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+
+    font-size: 17px;
+  }
+  }
+
+  button {
+    width: 90px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    background-color: #713c8c;
+
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+
+    border-radius: 6px;
+  }
