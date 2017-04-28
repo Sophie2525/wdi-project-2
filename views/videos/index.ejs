@@ -1,14 +1,21 @@
 <body>
 
-  <h1>Videos</h1>
+  <main class="container" id="video-container">
 
-  <div>
-    <ul style="list-style-type:none">
+    <div class="row row-centered">
       <% videos.forEach(video => { %>
-        <li><%= video.title %></li>
-        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.video %>" frameborder="0" allowfullscreen></iframe></li>
-      <% }); %>
-    </ul>
-  </div>
-
-</body>
+        <div class="col-md-6 col-centered text-center">
+        <a href="/videos/<%= video._id %>">
+        <h2> <%= video.title %> </h2>
+        </a>
+        <div class="videowrapper">
+        <iframe width="400" height="225" src="https://www.youtube.com/embed/<%= video.video %>" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="description">
+        <p> <%= video.description %> </p>
+        </div>
+        </div>
+        <% }); %>
+      </div>
+    </main>
+  </body>
