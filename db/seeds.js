@@ -4,6 +4,7 @@ const env        = require('../config/env');
 
 const User       = require('../models/user');
 const Venue      = require('../models/venue');
+const Video      = require('../models/video');
 
 mongoose.connect(env.db, () => {
   console.log('Connected');
@@ -11,6 +12,7 @@ mongoose.connect(env.db, () => {
 
 User.collection.drop();
 Venue.collection.drop();
+Video.collection.drop();
 
 User
 .create([
@@ -88,6 +90,39 @@ User
       .save(venue, (err, venue) => {
         if(err) return console.log(err);
         return console.log(`${venue.title} was created`);
+      });
+    });
+
+    return Video
+  .create([
+    {
+      title: 'Let Loose In Moncoton',
+      description: 'England fans take a trip to ToysRUs',
+      video: 'do2uelV5_Mo',
+      location: 'Moncton Shopping Mall'
+    }, {
+      title: 'Gravity In Reverse',
+      description: 'A trip down Magnetic Hill backwards',
+      video: 'zr7hwhXYxQs',
+      location: 'Magnetic Hill, Moncton'
+    }, {
+      title: 'GOTB meet a lioness',
+      description: 'A Moncton local wishes England good luck before the big game',
+      video: 'IRdGjInLnFs',
+      location: 'Moncton Zoo'
+    }, {
+      title: 'Moncton Cribs',
+      description: 'A tour around a local Moncton home',
+      video: 'y_6iqi241-E',
+      location: 'Moncton'
+    }]);
+  })
+  .then(videos => {
+    videos.forEach(video => {
+      video
+      .save(video, (err, video) => {
+        if(err) return console.log(err);
+        return console.log(`${video.title} was created`);
       });
     });
   });

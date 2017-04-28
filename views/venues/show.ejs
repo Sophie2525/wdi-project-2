@@ -1,23 +1,44 @@
 <main class="show">
 
+<section>
   <div>
     <img src="<%= venue.image %>" alt="<%= venue.title %>'s image" class="media-item">
     <h1><%= venue.title %></h2>
       <h4><%= venue.description %></h4>
       <p><%= venue.location %></p>
-  </div>
-
-  <div class="buttons">
-    <div class="button1">
-      <button type="submit" class="button"><a href="/venues/<%= venue._id %>/edit">EDIT</a></button>
     </div>
 
-    <div class="button2">
-      <form method="post" action="/venues/<%= venue.id %>">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit" class="button">DELETE</button>
-      </form>
-    </div>
-  </div>
+    <div class="buttons">
+      <div class="button1">
+        <button type="submit" class="button"><a href="/venues/<%= venue._id %>/edit">EDIT</a></button>
+      </div>
 
-</main>
+      <div class="button2">
+        <form method="post" action="/venues/<%= venue.id %>">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="button">DELETE</button>
+        </form>
+      </div>
+    </div>
+</section>
+
+    <div class="commentbox">
+    <div class="comment">
+    <form action="/venues/<%= venue.id %>" method="POST">
+    <div>
+      <label for="body">Please leave a comment</label>
+      <textarea name="body" id="body" rows="4" cols="80"></textarea>
+    </div>
+      <button type="submit">SUBMIT</button>
+    </form>
+    </div>
+
+    <ul style="list-style-type:none">
+      <% venue.comments.forEach(comment => { %>
+        <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a> &middot; <%= comment.body %></li>
+    <% }) %>
+    </ul>
+    </div>
+
+
+    </main>

@@ -1,0 +1,18 @@
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.video %>" frameborder="0" allowfullscreen></iframe>
+<h1><%= venue.title %></h2>
+<h4><%= venue.description %></h4>
+<p><%= venue.location %></p>
+
+  <div class="buttons">
+    <div class="button1">
+      <button type="submit" class="button"><a href="/venues/<%= venue._id %>/edit">EDIT</a></button>
+    </div>
+
+    <div class="button2">
+      <form method="post" action="/venues/<%= venue.id %>">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="button">DELETE</button>
+      </form>
+    </div>
+  </div>

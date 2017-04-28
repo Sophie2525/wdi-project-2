@@ -4,7 +4,8 @@
 
 body {
   font-family: 'Bubblegum Sans', cursive;
-  background-color: #f6f5f4
+  background-color: #f6f5f4;
+  margin-bottom: 10px;
 }
 
 // Home page
@@ -19,7 +20,7 @@ body {
   text-align: center;
 
   margin: 0 auto;
-  
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -57,39 +58,6 @@ body {
   display: inline-block;
 }
 
-// footer
-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #000;
-  color: #fff;
-  height: 40px;
-
-  a {
-    color: #fff;
-    font-size: 15px;
-  }
-
-  .footerContainer {
-    position: relative;
-    float: left;
-  }
-
-  .socialMedia{
-    position: relative;
-    margin-left: 84%;
-  }
-
-  li {
-    display: inline-block;
-    padding: 2px;
-    margin-left: 10px;
-  }
-}
-
 // Tracker page
 // map styling
 #map{
@@ -98,7 +66,7 @@ footer {
 
   position: fixed;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .infowindow{
@@ -117,7 +85,7 @@ footer {
 // carousel
 .container{
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 70px;
   margin-left: 50%;
   transform: translate(-25%, 0);
   position: relative;
@@ -142,7 +110,7 @@ footer {
 
 // Media show page
 .show{
-  margin-top: 60px;
+  margin-top: 20px;
 
   .media-item{
     position: relative;
@@ -184,18 +152,17 @@ footer {
     max-height: 50px;
 
     margin: 0 auto;
-    margin-top: 30px;
 
     .button1 {
       display: inline-block;
-      padding: 5px;
+      padding: 2px;
       margin: 0 auto;
       position: relative;
     }
 
     .button2{
       display: inline-block;
-      padding: 5px;
+      padding: 2px;
       margin: 0 auto;
       position: relative;
     }
@@ -218,6 +185,55 @@ footer {
     }
   }
 }
+
+// // COMMENTS
+.comment{
+  max-width: 700px;
+  border-radius: 3px;
+  border: 3px #713c8c solid;
+
+  margin: 0 auto;
+  margin-top: 50px;
+
+  position: relative;
+
+  text-align: center;
+
+  label{
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  button {
+    width: 90px;
+    height: 40px;
+    margin-bottom: 10px;
+
+    background-color: #713c8c;
+
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+
+    border-radius: 6px;
+  }
+
+}
+
+ul {
+  margin-top: 20px;
+  font-size: 20px;
+
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 400px;
+  text-align: center;
+
+  a{
+    color: #713c8c;
+  }
+}
+
 
 // FORMS
 .formContainer{

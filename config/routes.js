@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 const venues  = require('../controllers/venues');
+const videos  = require('../controllers/videos');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const statics = require('../controllers/statics');
@@ -38,6 +39,18 @@ router.route('/venues/:id/edit')
 
 router.route('/venues/:id')
   .post(comments.create);
+
+router.route('/videos')
+  .get(videos.index)
+  .post(secureRoute, videos.create);
+router.route('/videos/new')
+  .get(secureRoute, videos.new);
+router.route('/videos/:id')
+  .get(videos.show)
+  .put(secureRoute, videos.update)
+  .delete(secureRoute, videos.delete);
+router.route('/videos/:id/edit')
+  .get(secureRoute, videos.edit);
 
 router.route('/register')
   .get(registrations.new)
