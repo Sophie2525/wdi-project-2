@@ -1,10 +1,14 @@
-body {
-  font-family: 'Bubblegum Sans', cursive;
-  background-color: #f6f5f4;
+* {
+  box-sizing: border-box;
 }
 
-// Home Page
-.bg {
+body {
+  font-family: 'Bubblegum Sans', cursive;
+  background-color: #f6f5f4
+}
+
+// Home page
+.bg{
   background-image: url(http://i.imgur.com/GJyyXDe.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,69 +17,109 @@ body {
 .text{
   color: #fff;
   text-align: center;
-  display: block;
-  position: absolute;
-  margin: auto;
-  top: 80%;
+
+  margin: 0 auto;
+  
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   h1{
-    font-size: 100px;
+    font-size: 80px;
     text-shadow: 6px 6px #713c8c;
   }
 
-  h3 {
-    font-size: 50px;
+  h3{
+    font-size: 40px;
     text-shadow: 3px 4px #713c8c;
   }
 }
 
+// NavBar
 .navbar-default {
   background: #713c8c;
-  height: 70px;
+  height: 50px;
 }
 
 .navbar-default .navbar-brand {
   color: #fff;
   font-family: 'Bubblegum Sans', cursive;
-  font-size: 30px;
-  margin-top: 10px;
+  font-size: 25px;
+  margin-top: 2px;
 }
 
 .nav.navbar-nav.navbar-right  li a {
   color: #fff;
   font-family: 'Bubblegum Sans', cursive;
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 2px;
   display: inline-block;
 }
 
-// Map Page
-#map {
-  height: 500px;
-  width: 80%;
+// footer
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+  height: 40px;
+
+  a {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .footerContainer {
+    position: relative;
+    float: left;
+  }
+
+  .socialMedia{
+    position: relative;
+    margin-left: 84%;
+  }
+
+  li {
+    display: inline-block;
+    padding: 2px;
+    margin-left: 10px;
+  }
+}
+
+// Tracker page
+// map styling
+#map{
+  height: 400px;
+  width: 900px;
+
+  position: fixed;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .infowindow{
-  width: 200px;
-  max-height: 200px;
+  width: 150px;
+  max-height: 150px;
 
   text-align: center;
   font-family: 'Bubblegum Sans', cursive;
+  font-size: 15px;
 
   a {
     color: #713c8c;
   }
 }
 
-// carousel on map page
+// carousel
 .container{
   margin: 0 auto;
   margin-top: 60px;
-  margin-left: 32%;
+  margin-left: 50%;
+  transform: translate(-25%, 0);
   position: relative;
 
   .well{
@@ -96,54 +140,64 @@ body {
   }
 }
 
-// Media Show Page
+// Media show page
 .show{
   margin-top: 60px;
 
-  text-align: center;
-  color: #000;
+  .media-item{
+    position: relative;
+    max-width: 70%;
+    max-height: 500px;
+
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 10px;
+
+    border-radius: 6px;
+  }
 
   h1{
-    font-size: 70px;
-
+    text-align: center;
+    color: #000;
+    font-size:30px;
+    font-weight:bold;
   }
 
-  p {
+  h4{
+    text-align: center;
+    color: #713c8c;
     font-size: 25px;
+    font-weight: bold;
   }
 
-  .travelImage{
-    max-width: 650px;
+  p{
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+  }
+
+  // BUTTONS
+  .buttons{
     position: relative;
-    display: inline-block;
+    max-width: 210px;
+    max-height: 50px;
 
-    margin-top: 20px;
-
-    img{
-      max-width: 600px;
-      max-height: 400px;
-      padding: 10px;
-    }
-  }
-
-  .info{
-    margin-left: 60px;
-    display: inline-block;
-
-    p {
-      text-align: center;
-    }
+    margin: 0 auto;
+    margin-top: 30px;
 
     .button1 {
       display: inline-block;
       padding: 5px;
       margin: 0 auto;
+      position: relative;
     }
 
     .button2{
       display: inline-block;
       padding: 5px;
       margin: 0 auto;
+      position: relative;
     }
 
     .button {
@@ -165,85 +219,24 @@ body {
   }
 }
 
-  .comment{
-    max-width: 700px;
-    border-radius: 3px;
-    border: 3px #713c8c solid;
+// FORMS
+.formContainer{
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px #713c8c solid;
+}
 
-    margin: 0 auto;
-    margin-top: 50px;
+.form-group{
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
 
-    position: relative;
-
-    label{
-      font-size: 20px;
-      padding: 10px;
-    }
-
-    button {
-      width: 90px;
-      height: 40px;
-      margin-bottom: 10px;
-
-      background-color: #713c8c;
-
-      color: #fff;
-      font-size: 20px;
-      text-align: center;
-
-      border-radius: 6px;
-    }
-
-  }
-
-  ul {
-    margin-top: 20px;
-    font-size: 20px;
-
-    a{
-      color: #713c8c;
-    }
-  }
-
-// form page
-  .formContainer{
-    width: 50%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 8pc;
-    border: 3px #713c8c solid;
-  }
-
-  #new {
-    width: 50%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 9pc;
-    border: 3px #713c8c solid;
-  }
-
-  #login {
-    width: 50%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 18pc;
-    border: 3px #713c8c solid;
-  }
-
-  #register {
-    width: 50%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 14pc;
-    border: 3px #713c8c solid;
-  }
-
-  .form-group{
-    width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-
-    label{
+  label{
     display: block;
     font-size: 20px;
   }
@@ -255,19 +248,19 @@ body {
 
     font-size: 17px;
   }
-  }
+}
 
-  button {
-    width: 90px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+button {
+  width: 90px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 
-    background-color: #713c8c;
+  background-color: #713c8c;
 
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
 
-    border-radius: 6px;
-  }
+  border-radius: 6px;
+}

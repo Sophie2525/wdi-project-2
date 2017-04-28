@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <title>WDI Project 2</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLVnNmjiWCU6dGd10eea4_rLsjLfghME&callback=initMap"
-  type="text/javascript"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="/js/client.js" charset="utf-8"></script>
-</head>
+  <head>
+    <%- include ./partials/_stylesheet %>
+  </head>
 
-<body <% if (locals.path === '/') { %>class="bg"<% } %>>
+  <body <% if (locals.path === '/') { %>class="bg"<% } %>>
 
-  <header>
-    <%- include ./partials/_navbar %>
-  </header>
+    <header>
+      <%- include ./partials/_navbar %>
+    </header>
 
-  <main>
-    <% for (const type in messages) { %>
-      <p class="alert alert-<%= type %>"><%= messages[type] %></p>
-      <% } %>
+    <main>
+      <% for (const type in messages) { %>
+        <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+        <% } %>
       <%- body %>
     </main>
 
-    <footer><div class="footer navbar-fixed-bottom"></div> </footer>
+    <footer>
+      <%- include ./partials/_footer %>
+    </footer>
+
   </body>
-  </html>
+</html>

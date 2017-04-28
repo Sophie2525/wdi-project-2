@@ -154,3 +154,9 @@ function addInfoWindowForVenue(venue, marker, map){
     map.setCenter(marker.getPosition());
   });
 }
+
+// function panTo(venue, marker, map, latLng){
+//   google.maps.event.addListener(marker, 'click', function() {
+//     map.panTo(latLng);
+//   });
+// }
